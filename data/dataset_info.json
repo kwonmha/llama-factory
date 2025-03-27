@@ -679,5 +679,110 @@
       "prompt": "content"
     },
     "folder": "python"
+  },
+  "beomi-qa": {
+    "file_name": "/srv3-share1/mhkwon/training_data/beomi-koalpaca-realqa.json",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "instruction",
+      "response": "output"
+    }
+  },
+  "korquad_sft": {
+    "file_name": "/srv3-share1/mhkwon/training_data/korquad-chat_koalpaca.json",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "life_contract_sft": {
+    "file_name": "/srv3-share1/mhkwon/training_data/231003_life_contract30_v3_total.json",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "aihub_financial_qa": {
+    "file_name": 
+    "/srv4-share1/DATA/PREPROCESSED/AIHub_019/AIHUB_lawrule_qa_alpaca_form_250226.json",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "aihub_financial_mcqa": {
+    "file_name": "/srv4-share1/DATA/PREPROCESSED/AIHub_019/AIHUB_lawrule_mcqa_alpaca_form_250227.json",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "aihub_calc+mrc": {
+    "file_name": "/srv4-share1/DATA/PREPROCESSED/AIHub_150/AIHUB_number_qa_gpt4o_cleaned_250227.json",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "bccard_financial_qa": {
+    "hf_hub_url": "BCCard/BCCard-Finance-Kor-QnA",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "instruction",
+
+      "response": "output"
+    }
+  },
+  "life_contract_dpo": {
+    "file_name": "/srv3-share1/mhkwon/training_data/231003_life_contract30_after_dpo_rejected_bad_prompt.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "prompt",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "korquad_dpo": {
+    "file_name": "/srv3-share1/mhkwon/training_data/korquad-chat_koalpaca_after_dpo_rejected_bad_prompt.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "prompt",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "ultrafeedback_fai": {
+    "file_name": "/srv3-share1/mhkwon/training_data/ultrafeedback_binarized_base-5-translated-llama-enko-v3_training.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "prompt",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "helpsteer2": {
+    "file_name": "/srv3-share1/mhkwon/training_data/translated_preference_helpsteer2_llama-enko_training.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "prompt",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "fmmlu-gpt": {
+    "file_name":"/srv3-share1/mhkwon/training_data/cpt/fmmlu_passage.json",
+    "columns": {
+      "prompt": "response"
+    }
   }
 }

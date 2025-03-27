@@ -353,7 +353,8 @@ class ReporterCallback(TrainerCallback):
         self.data_args = data_args
         self.finetuning_args = finetuning_args
         self.generating_args = generating_args
-        os.environ["WANDB_PROJECT"] = os.getenv("WANDB_PROJECT", "llamafactory")
+        os.environ["WANDB_PROJECT"] = os.getenv("WANDB_PROJECT", "project_not_defined")
+        os.environ["WANDB_ENTITY"] = os.getenv("WANDB_ENTITY", "entity_not_defined")
 
     @override
     def on_train_begin(self, args: "TrainingArguments", state: "TrainerState", control: "TrainerControl", **kwargs):

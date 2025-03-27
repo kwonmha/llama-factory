@@ -28,6 +28,7 @@ class PretrainDatasetProcessor(DatasetProcessor):
         # build grouped texts with format `X1 X2 X3 ...` if packing is enabled
         eos_token = "<|end_of_text|>" if self.data_args.template == "llama3" else self.tokenizer.eos_token
         text_examples = [messages[0]["content"] + eos_token for messages in examples["_prompt"]]
+        print(f"len text_examples: {len(text_examples)}") # num examples / preprocessing_num_workers
 
         if not self.data_args.packing:
             if getattr(self.tokenizer, "add_bos_token", False):
@@ -38,20 +39,30 @@ class PretrainDatasetProcessor(DatasetProcessor):
             )
         else:
             tokenized_examples = self.tokenizer(text_examples, add_special_tokens=False)
+            # print(tokenized_examples.keys()) # input_ids, attention_mask
             concatenated_examples = {k: list(chain(*tokenized_examples[k])) for k in tokenized_examples.keys()}
             total_length = len(concatenated_examples[list(concatenated_examples.keys())[0]])
             block_size = self.data_args.cutoff_len
-            total_length = (total_length // block_size) * block_size
+            # total_length = (total_length // block_size) * block_size + 1 # 짜투리 추가.. 이럴 거면 이 코드가 필요없는데
+            # print(total_length - total_length_wo_remainder) # fmmlu 기준 많이 짤림
             result = {
                 k: [t[i : i + block_size] for i in range(0, total_length, block_size)]
                 for k, t in concatenated_examples.items()
             }
             if getattr(self.tokenizer, "add_bos_token", False):
                 for i in range(len(result["input_ids"])):
-                    result["input_ids"][i][0] = self.tokenizer.bos_token_id
+                    result["input_ids"][i] = [self.tokenizer.bos_token_id] + result["input_ids"][i][:-1]
+                # print(tokenizer.decode(result["input_ids"][i][:30]))
+        # print(f"len tokenized example: {len(tokenized_examples[0])}")
 
         return result
 
     def print_data_example(self, example: dict[str, list[int]]) -> None:
+        # count = 0
+        # for id in example["input_ids"]:
+        #     if id == tokenizer.eos_token_id:
+        #         count += 1
+        # print("{} <eos> in example.\n".format(count))
+        # count = 14
         print("input_ids:\n{}".format(example["input_ids"]))
         print("inputs:\n{}".format(self.tokenizer.decode(example["input_ids"], skip_special_tokens=False)))
