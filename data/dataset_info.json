@@ -779,10 +779,94 @@
       "rejected": "rejected"
     }
   },
+  "mini_pile": {
+    "file_name":"/srv3-share1/mhkwon/training_data/cpt/pile/1.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
   "fmmlu-gpt": {
     "file_name":"/srv3-share1/mhkwon/training_data/cpt/fmmlu_passage.json",
     "columns": {
       "prompt": "response"
+    }
+  },
+  "eco-fin_terms700": {
+    "file_name":"/srv3-share1/mhkwon/training_data/cpt/eco-fin_terms700.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "insurance_agent_material": {
+    "file_name":"/srv3-share1/mhkwon/training_data/cpt/insurance_agent_material.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "pbr_of_korean_bank_and_insurance_corps": {
+    "file_name":"/srv3-share1/mhkwon/training_data/cpt/pbr_of_korean_bank_and_insurance_corps.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "practical_financial_for_university": {
+    "file_name":"/srv3-share1/mhkwon/training_data/cpt/practical_financial_for_university.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "variable_insurance_certificate_meterial": {
+    "file_name":"/srv3-share1/mhkwon/training_data/cpt/variable_insurance_certificate_meterial.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "modu_news_eco": {
+    "file_name":"/srv3-share1/mhkwon/training_data/cpt/modu/news-eco/",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "korean_general_book": {
+    "file_name":"/srv3-share1/mhkwon/training_data/cpt/gemma3-27b-training/korean",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "korean_general_legal": {
+    "file_name":"/srv4-share1/ubuntu/datas/kor_legal/training_data_hardlink",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "kftc": {
+    "file_name":"/srv3-share1/mhkwon/training_data/cpt/gemma3-4b-training/korean/financial/gov/",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "korean_collected_financial_data_kmh": {
+    "file_name":"/srv3-share1/mhkwon/training_data/cpt/gemma3-4b-training/korean/financial/collected/",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "slimpajama": {
+    "file_name":"/srv3-share1/mhkwon/training_data/cpt/gemma3-27b-training/english",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "korean_collected_financial_data_line": {
+    "file_name":"/srv4-share1/ubuntu/datas/kor_finance/training_data_hardlink",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "multilingual": {
+    "file_name":"/srv4-share1/ubuntu/datas/multi_lingual/Pleias/common_corpus/multilingual_Pleias_5B_10L_training_form.json",
+    "columns": {
+      "prompt": "text"
     }
   }
 }

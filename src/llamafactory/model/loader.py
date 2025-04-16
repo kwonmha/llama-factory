@@ -152,8 +152,6 @@ def load_model(
 
             if model_args.train_from_scratch:
                 model = load_class.from_config(config, trust_remote_code=model_args.trust_remote_code)
-            # elif True: # gemma3
-            #     model = load_class.from_pretrained(**init_kwargs, attention_implementation="eager")
             else:
                 model = load_class.from_pretrained(**init_kwargs)
 
