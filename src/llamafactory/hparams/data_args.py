@@ -119,7 +119,7 @@ class DataArguments:
         default=None,
         metadata={"help": "Override the default system message in the template."},
     )
-    enable_thinking: bool = field(
+    enable_thinking: Optional[bool] = field(
         default=True,
         metadata={"help": "Whether or not to enable thinking mode for reasoning models."},
     )
@@ -132,6 +132,10 @@ class DataArguments:
                 "If tokenized_path exists, it will load the tokenized datasets."
             )
         },
+    )
+    data_shared_file_system: bool = field(
+        default=False,
+        metadata={"help": "Whether or not to use a shared file system for the datasets."},
     )
 
     def __post_init__(self):

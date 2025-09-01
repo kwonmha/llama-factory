@@ -2,7 +2,7 @@
 
 其中 `dataset_info.json` 文件应放置在 `dataset_dir` 目录下。您可以通过修改 `dataset_dir` 参数来使用其他目录。默认值为 `./data`。
 
-目前我们支持 **alpaca** 格式和 **sharegpt** 格式的数据集。
+目前我们支持 **alpaca** 格式和 **sharegpt** 格式的数据集。允许的文件类型包括 json、jsonl、csv、parquet 和 arrow。
 
 ```json
 "数据集名称": {
@@ -88,7 +88,9 @@
 ```
 
 > [!TIP]
-> 如果模型本身具备推理能力，而数据集不包含思维链，LLaMA-Factory 会自动为数据添加空思维链。当 `enable_thinking` 为 `True` 时，空思维链会添加到模型回答中并且计算损失，否则会添加到用户指令中并且不计算损失。请在训练和推理时保持 `enable_thinking` 参数一致。
+> 如果模型本身具备推理能力（如 Qwen3）而数据集不包含思维链，LLaMA-Factory 会自动为数据添加空思维链。当 `enable_thinking` 为 `True` 时（慢思考，默认），空思维链会添加到模型回答中并且计算损失，否则会添加到用户指令中并且不计算损失（快思考）。请在训练和推理时保持 `enable_thinking` 参数一致。
+>
+> 如果您希望训练包含思维链的数据时使用慢思考，训练不包含思维链的数据时使用快思考，可以设置 `enable_thinking` 为 `None`。但该功能较为复杂，请谨慎使用。
 
 ### 预训练数据集
 
@@ -170,7 +172,7 @@ KTO 数据集需要提供额外的 `kto_tag` 列。详情请参阅 [sharegpt](#s
 
 相比 alpaca 格式的数据集，sharegpt 格式支持**更多的角色种类**，例如 human、gpt、observation、function 等等。它们构成一个对象列表呈现在 `conversations` 列中。
 
-注意其中 human 和 observation 必须出现在奇数位置，gpt 和 function 必须出现在偶数位置。
+注意其中 human 和 observation 必须出现在奇数位置，gpt 和 function 必须出现在偶数位置。默认所有的 gpt 和 function 会被用于学习。
 
 ```json
 [
