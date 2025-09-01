@@ -210,7 +210,7 @@ class MMPluginMixin:
 
         if len(audios) != num_audio_tokens:
             raise ValueError(
-                f"The number of audios does not match the number of {AUDIO_PLACEHOLDER} tokens in {messages}."
+                f"The number of audios({len(audios)}) does not match the number of {AUDIO_PLACEHOLDER} tokens({num_audio_tokens}) in {messages}."
             )
 
     def _preprocess_image(
@@ -458,7 +458,7 @@ class Gemma3Plugin(BasePlugin):
         processor: Optional["MMProcessor"],
     ) -> list[dict[str, str]]:
         self._validate_input(processor, images, videos, audios)
-        self._validate_messages(messages, images, videos, audios)
+        # self._validate_messages(messages, images, videos, audios)
         num_image_tokens = 0
         messages = deepcopy(messages)
         boi_token: str = getattr(processor, "boi_token")

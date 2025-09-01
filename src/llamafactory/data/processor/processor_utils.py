@@ -86,3 +86,34 @@ def infer_seqlen(source_len: int, target_len: int, cutoff_len: int) -> tuple[int
     max_source_len = max(cutoff_len - new_target_len, 0)
     new_source_len = min(max_source_len, source_len)
     return new_source_len, new_target_len
+
+
+def count_special_tokens(
+        prompt: list[dict[str, str]],
+        response: list[dict[str, str]]
+    ) -> int:
+    prompt = [p["content"] for p in prompt]
+    chosen = response[0]["content"]
+    rejected = response[1]["content"]
+    
+    special_token_count = 0
+    special_tokens = ["<audio>", "<image>", "<video>"]
+    for special_token in special_tokens:
+        for p in prompt:
+            count_in_prompt = p.count(special_token)
+            special_token_count += count_in_prompt
+            if count_in_prompt > 0:
+                print("special token in prompt")
+                print(prompt)
+        count_in_chosen = chosen.count(special_token)
+        special_token_count += count_in_chosen
+        if count_in_chosen > 0:
+            print("special token in chosen")
+            print(chosen)
+        count_in_rejected = rejected.count(special_token)
+        special_token_count += count_in_rejected
+        if count_in_rejected > 0:
+            print("special token in rejected")
+            print(rejected)
+    return special_token_count
+

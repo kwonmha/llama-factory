@@ -17,7 +17,7 @@ from typing import TYPE_CHECKING, Any, Optional
 
 from ...extras import logging
 from ...extras.constants import IGNORE_INDEX
-from .processor_utils import DatasetProcessor, infer_seqlen
+from .processor_utils import DatasetProcessor, infer_seqlen, count_special_tokens
 
 
 if TYPE_CHECKING:
@@ -75,6 +75,13 @@ class PairwiseDatasetProcessor(DatasetProcessor):
             if len(examples["_prompt"][i]) % 2 != 1 or len(examples["_response"][i]) < 2:
                 logger.warning_rank0(
                     "Dropped invalid example: {}".format(examples["_prompt"][i] + examples["_response"][i])
+                )
+                continue
+
+            # "<video>", "<audio>", "<image>" 검사해서 제외
+            if count_special_tokens(examples["_prompt"][i], examples["_response"][i]) > 0:
+                logger.info_rank0(
+                    "Dropped invalid example with <audio> or <video> or <image> token: {}".format(examples["_prompt"][i] + examples["_response"][i])
                 )
                 continue
 
