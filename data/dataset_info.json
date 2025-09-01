@@ -814,6 +814,12 @@
       "rejected": "rejected"
     }
   },
+  "mini_pile": {
+    "file_name":"/srv3-share1/mhkwon/training_data/cpt/pile/1.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
   "fmmlu-gpt": {
     "file_name":"/srv3-share1/mhkwon/training_data/cpt/fmmlu_passage.json",
     "columns": {
