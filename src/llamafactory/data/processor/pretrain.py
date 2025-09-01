@@ -53,7 +53,7 @@ class PretrainDatasetProcessor(DatasetProcessor):
                 for i in range(len(result["input_ids"])):
                     result["input_ids"][i] = [self.tokenizer.bos_token_id] + result["input_ids"][i][:-1]
                 # print(tokenizer.decode(result["input_ids"][i][:30]))
-        # print(f"len tokenized example: {len(tokenized_examples[0])}")
+        # print(f"len tokenized example: {len(tokenized_examples[0])}, {tokenized_examples[3950:]}")
 
         return result
 

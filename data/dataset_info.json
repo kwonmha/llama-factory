@@ -716,7 +716,7 @@
     "folder": "python"
   },
   "beomi-qa": {
-    "file_name": "/srv3-share1/mhkwon/training_data/beomi-koalpaca-realqa.json",
+    "file_name": "/srv3-data/share1/mhkwon/training_data/beomi-koalpaca-realqa.json",
     "formatting": "alpaca",
     "columns": {
       "prompt": "instruction",
@@ -724,7 +724,7 @@
     }
   },
   "korquad_sft": {
-    "file_name": "/srv3-share1/mhkwon/training_data/korquad-chat_koalpaca.json",
+    "file_name": "/srv3-data/share1/mhkwon/training_data/korquad-chat_koalpaca.json",
     "formatting": "alpaca",
     "columns": {
       "prompt": "instruction",
@@ -733,7 +733,7 @@
     }
   },
   "life_contract_sft": {
-    "file_name": "/srv3-share1/mhkwon/training_data/231003_life_contract30_v3_total.json",
+    "file_name": "/srv3-data/share1/mhkwon/training_data/231003_life_contract30_v3_total.json",
     "formatting": "alpaca",
     "columns": {
       "prompt": "instruction",
@@ -743,7 +743,7 @@
   },
   "aihub_financial_qa": {
     "file_name": 
-    "/srv4-share1/DATA/PREPROCESSED/AIHub_019/AIHUB_lawrule_qa_alpaca_form_250226.json",
+    "/srv4-data/share1DATA/PREPROCESSED/AIHub_019/AIHUB_lawrule_qa_alpaca_form_250226.json",
     "formatting": "alpaca",
     "columns": {
       "prompt": "instruction",
@@ -752,7 +752,7 @@
     }
   },
   "aihub_financial_mcqa": {
-    "file_name": "/srv4-share1/DATA/PREPROCESSED/AIHub_019/AIHUB_lawrule_mcqa_alpaca_form_250227.json",
+    "file_name": "/srv4-data/share1DATA/PREPROCESSED/AIHub_019/AIHUB_lawrule_mcqa_alpaca_form_250227.json",
     "formatting": "alpaca",
     "columns": {
       "prompt": "instruction",
@@ -761,7 +761,7 @@
     }
   },
   "aihub_calc+mrc": {
-    "file_name": "/srv4-share1/DATA/PREPROCESSED/AIHub_150/AIHUB_number_qa_gpt4o_cleaned_250227.json",
+    "file_name": "/srv4-data/share1DATA/PREPROCESSED/AIHub_150/AIHUB_number_qa_gpt4o_cleaned_250227.json",
     "formatting": "alpaca",
     "columns": {
       "prompt": "instruction",
@@ -779,7 +779,7 @@
     }
   },
   "life_contract_dpo": {
-    "file_name": "/srv3-share1/mhkwon/training_data/231003_life_contract30_after_dpo_rejected_bad_prompt.json",
+    "file_name": "/srv3-data/share1/mhkwon/training_data/231003_life_contract30_after_dpo_rejected_bad_prompt.json",
     "ranking": true,
     "columns": {
       "prompt": "prompt",
@@ -788,7 +788,7 @@
     }
   },
   "korquad_dpo": {
-    "file_name": "/srv3-share1/mhkwon/training_data/korquad-chat_koalpaca_after_dpo_rejected_bad_prompt.json",
+    "file_name": "/srv3-data/share1/mhkwon/training_data/korquad-chat_koalpaca_after_dpo_rejected_bad_prompt.json",
     "ranking": true,
     "columns": {
       "prompt": "prompt",
@@ -797,7 +797,7 @@
     }
   },
   "ultrafeedback_fai": {
-    "file_name": "/srv3-share1/mhkwon/training_data/ultrafeedback_binarized_base-5-translated-llama-enko-v3_training.json",
+    "file_name": "/srv3-data/share1/mhkwon/training_data/preference/ultrafeedback_binarized_base-5-translated-llama-enko-v3_training.json",
     "ranking": true,
     "columns": {
       "prompt": "prompt",
@@ -806,7 +806,7 @@
     }
   },
   "helpsteer2": {
-    "file_name": "/srv3-share1/mhkwon/training_data/translated_preference_helpsteer2_llama-enko_training.json",
+    "file_name": "/srv3-data/share1/mhkwon/training_data/translated_preference_helpsteer2_llama-enko_training.json",
     "ranking": true,
     "columns": {
       "prompt": "prompt",
@@ -814,16 +814,10 @@
       "rejected": "rejected"
     }
   },
-  "mini_pile": {
-    "file_name":"/srv3-share1/mhkwon/training_data/cpt/pile/1.jsonl",
-    "columns": {
-      "prompt": "text"
-    }
-  },
   "fmmlu-gpt": {
     "file_name":"/srv3-share1/mhkwon/training_data/cpt/fmmlu_passage.json",
     "columns": {
-      "prompt": "response"
+      "prompt": "text"
     }
   },
   "eco-fin_terms700": {
@@ -856,20 +850,8 @@
       "prompt": "text"
     }
   },
-  "modu_news_eco": {
-    "file_name":"/srv3-share1/mhkwon/training_data/cpt/modu/news-eco/",
-    "columns": {
-      "prompt": "text"
-    }
-  },
   "korean_general_book": {
     "file_name":"/srv3-share1/mhkwon/training_data/cpt/gemma3-27b-training/korean",
-    "columns": {
-      "prompt": "text"
-    }
-  },
-  "korean_general_legal": {
-    "file_name":"/srv4-share1/ubuntu/datas/kor_legal/training_data_hardlink",
     "columns": {
       "prompt": "text"
     }
@@ -880,28 +862,270 @@
       "prompt": "text"
     }
   },
-  "korean_collected_financial_data_kmh": {
-    "file_name":"/srv3-share1/mhkwon/training_data/cpt/gemma3-4b-training/korean/financial/collected/",
+  "kftc_pt": {
+    "file_name":"/srv2-data/mhkwon/training_data/cpt/kftc_cpt",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "korean_financial_collected_data_line": {
+    "file_name":"/srv2-data/mhkwon/training_data/cpt/korean_financial_collected_data_line",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "korean_financial_collected_data_wcshin": {
+    "file_name":"/srv2-data/mhkwon/training_data/cpt/korean_financial_collected_data_wcshin",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "korean_financial_terms_data_wcshin": {
+    "file_name":"/srv4-data/share1/ubuntu/datas/wcshin_sft/word_new",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "ppomppu": {
+    "file_name":"/srv2-data/mhkwon/training_data/cpt/ppomppu//ppomppu_old_version_final.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "modu_news_eco": {
+    "file_name":"/srv3-share1/mhkwon/training_data/cpt/modu/news-eco/",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "korean_financial_collected_data_kmh": {
+    "file_name":"/srv2-data/mhkwon/training_data/cpt/kmh_financial_hardlink",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "task_decomposition_cpt": {
+    "file_name":"/srv1-data/cmyoo/data_syn/TaskDecomp/data/TaskDecomp_qcra_250728.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "selectstar": {
+    "file_name":"/srv3-data/hkim/Data/Origin/selectstar_textbooks/selectstar_cpt_modified_byQWEN_250718.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "bhsn": {
+    "file_name":"/srv1-data/data_workspace/datasets/bhsn_data/raw_data/preprocessed/split_files",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "korean_general_legal": {
+    "file_name":"/srv2-data/mhkwon/training_data/cpt/korean_general_legal/training_data",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "modu_news_Xeco": {
+    "file_name":"/srv2-data/mhkwon/training_data/cpt/modu-Xeco-hardlinks",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "modu_book": {
+    "file_name":"/srv2-data/mhkwon/training_data/cpt/modu_book.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "korean_general_aihub": {
+    "file_name":"/srv2-data/mhkwon/training_data/cpt/aihub",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "ultrafeedback_cpt_fai": {
+    "file_name": "/srv2-data/mhkwon/training_data/cpt/ultrafeedback_binarized_base-5-translated-llama-enko-v3_training_cpt.json",
     "columns": {
       "prompt": "text"
     }
   },
   "slimpajama": {
-    "file_name":"/srv3-share1/mhkwon/training_data/cpt/gemma3-27b-training/english",
+    "file_name":"/srv2-data/mhkwon/training_data/cpt/slimpajama/train/chunk1",
     "columns": {
       "prompt": "text"
     }
   },
-  "korean_collected_financial_data_line": {
-    "file_name":"/srv4-share1/ubuntu/datas/kor_finance/training_data_hardlink",
+  "ultrafineweb": {
+    "file_name":"/srv2-data/mhkwon/training_data/cpt/ultrafineweb/training_data",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "gutenberg": {
+    "file_name":"/srv1-data/data_workspace/datasets/gutenberg/gutenberg_dataset.json",
     "columns": {
       "prompt": "text"
     }
   },
   "multilingual": {
-    "file_name":"/srv4-share1/ubuntu/datas/multi_lingual/Pleias/common_corpus/multilingual_Pleias_5B_10L_training_form.json",
+    "file_name":"/srv4-data/share1/ubuntu/datas/multi_lingual/Pleias/common_corpus/multilingual_Pleias_5B_10L_training_form.json",
     "columns": {
       "prompt": "text"
+    }
+  },
+  "selectstar_dataline": {
+    "file_name": "/srv2-data/mhkwon/training_data/dataline/preprocessed_selectstar_training_dataset_250814.json",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "instruction",
+      "response": "answer"
+    }
+  },
+  "orpo_250505": {
+    "file_name": "/srv2-data/mhkwon/training_data/preference/training_data/250505-cptv1-ptv1",
+    "ranking": true,
+    "columns": {
+      "prompt": "question",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "orpo_250526": {
+    "file_name": "/srv2-data/mhkwon/training_data/preference/training_data/250526-cptv1-ptv2",
+    "ranking": true,
+    "columns": {
+      "prompt": "question",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "orpo_250605-1": {
+    "file_name": "/srv2-data/mhkwon/training_data/preference/training_data/250605-1-cptv2",
+    "ranking": true,
+    "columns": {
+      "prompt": "question",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "orpo_250605-2": {
+    "file_name": "/srv2-data/mhkwon/training_data/preference/training_data/250605-2-cptv2",
+    "ranking": true,
+    "columns": {
+      "prompt": "question",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "250613-qwen3-32b": {
+    "file_name": "/srv2-data/mhkwon/training_data/preference/training_data/250613-qwen3-32b",
+    "ranking": true,
+    "columns": {
+      "prompt": "question",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "250613-cptv2+it": {
+    "file_name": "/srv2-data/mhkwon/training_data/preference/training_data/250613-cptv2+it",
+    "ranking": true,
+    "columns": {
+      "prompt": "question",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "250620-cptv2+it": {
+    "file_name": "/srv2-data/mhkwon/training_data/preference/training_data/250620-cptv2+it",
+    "ranking": true,
+    "columns": {
+      "prompt": "question",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "250704-helpsteer": {
+    "file_name": "/srv2-data/mhkwon/training_data/preference/training_data/250704",
+    "ranking": true,
+    "columns": {
+      "prompt": "question",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "250711-orpo": {
+    "file_name": "/srv2-data/mhkwon/training_data/preference/training_data/250711",
+    "ranking": true,
+    "columns": {
+      "prompt": "question",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "250730-orpo": {
+    "file_name": "/srv2-data/mhkwon/training_data/preference/training_data/250730-cptv4+it",
+    "ranking": true,
+    "columns": {
+      "prompt": "question",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "250730-orpo-srv2": {
+    "file_name": "/srv2-data/mhkwon/training_data/preference/training_data/250730-cptv4+it",
+    "ranking": true,
+    "columns": {
+      "prompt": "question",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "250805-orpo-srv2": {
+    "file_name": "/srv2-data/mhkwon/training_data/preference/training_data/250805-cptv4+it",
+    "ranking": true,
+    "columns": {
+      "prompt": "question",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "250805-orpo-from250711-srv2": {
+    "file_name": "/srv2-data/mhkwon/training_data/preference/training_data/250805-cptv4+it-From250711",
+    "ranking": true,
+    "columns": {
+      "prompt": "question",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "250806-orpo-srv2": {
+    "file_name": "/srv2-data/mhkwon/training_data/preference/training_data/250806",
+    "ranking": true,
+    "columns": {
+      "prompt": "question",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "template-test": {
+    "file_name": "/srv2-data/mhkwon/training_data/preference/training_data/template-test-for-tool-calling",
+    "ranking": true,
+    "columns": {
+      "prompt": "question",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "image_token_test": {
+    "file_name": "/srv2-data/mhkwon/training_data/preference/training_data/ultrafeedback.json",
+    "ranking": true,
+    "columns": {
+      "prompt": "question",
+      "chosen": "chosen",
+      "rejected": "rejected"
     }
   }
 }
