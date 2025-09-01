@@ -80,8 +80,11 @@ def _load_single_dataset(
             data_files.append(local_path)
         else:
             raise ValueError(f"File {local_path} not found.")
-
-        data_path = FILEEXT2TYPE.get(os.path.splitext(data_files[0])[-1][1:], None)
+        try:
+            data_path = FILEEXT2TYPE.get(os.path.splitext(data_files[0])[-1][1:], None)
+        except Exception as e:
+            print(data_files)
+            raise IndexError("list index out of range")
         if data_path is None:
             raise ValueError("Allowed file types: {}.".format(",".join(FILEEXT2TYPE.keys())))
 
@@ -140,6 +143,7 @@ def _load_single_dataset(
             trust_remote_code=model_args.trust_remote_code,
             streaming=data_args.streaming and dataset_attr.load_from != "file",
         )
+        print(f"loading done {data_path}:{data_name}:{data_dir}:{data_files}")
         if data_args.streaming and dataset_attr.load_from == "file":
             dataset = dataset.to_iterable_dataset(num_shards=training_args.dataloader_num_workers)
 
