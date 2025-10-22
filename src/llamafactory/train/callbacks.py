@@ -26,16 +26,13 @@ import transformers
 from peft import PeftModel
 from transformers import PreTrainedModel, ProcessorMixin, TrainerCallback
 from transformers.trainer_utils import PREFIX_CHECKPOINT_DIR, has_length
-from transformers.utils import (
-    SAFE_WEIGHTS_NAME,
-    WEIGHTS_NAME,
-    is_safetensors_available,
-)
+from transformers.utils import SAFE_WEIGHTS_NAME, WEIGHTS_NAME
 from typing_extensions import override
 
 from ..extras import logging
 from ..extras.constants import TRAINER_LOG, V_HEAD_SAFE_WEIGHTS_NAME, V_HEAD_WEIGHTS_NAME
 from ..extras.misc import get_peak_memory, is_env_enabled, use_ray
+from ..extras.packages import is_safetensors_available
 
 
 if is_safetensors_available():
@@ -353,8 +350,7 @@ class ReporterCallback(TrainerCallback):
         self.data_args = data_args
         self.finetuning_args = finetuning_args
         self.generating_args = generating_args
-        os.environ["WANDB_PROJECT"] = os.getenv("WANDB_PROJECT", "project_not_defined")
-        os.environ["WANDB_ENTITY"] = os.getenv("WANDB_ENTITY", "entity_not_defined")
+        os.environ["WANDB_PROJECT"] = os.getenv("WANDB_PROJECT", "llamafactory")
 
     @override
     def on_train_begin(self, args: "TrainingArguments", state: "TrainerState", control: "TrainerControl", **kwargs):
